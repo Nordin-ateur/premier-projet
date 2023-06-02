@@ -1,0 +1,8 @@
+# commentaires du fichier .gitignore
+# tous les fichiers et dossiers indiqués dans le fichier .gitignore seront ignorés par GIT
+temp.html
+*.txt
+temp/
+
+# les fichiers déjà trackés ne peuvent pas être ignorés même s'ils apparaissent dans 
+# le fichier .gitignore
