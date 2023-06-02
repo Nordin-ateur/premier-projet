@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <title>calc</title>
+</head>
+<body>
+    <input type="number" id="n1">
+    <select name="operation" id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="n2">
+    <button id="egale">=</button>
+    <label for="resultat"></label>
+  <input type="text" id="resultat" style="width: 100px;" readonly>
+
+    <script>
+
+$('#egale').click(function() {
+        var num1 = parseInt($('#n1').val());
+        var num2 = parseInt($('#n2').val());
+        var operation = $('#operation').val();
+
+        if (!isNaN(num1) && !isNaN(num2)) {
+          var result;
+
+          switch (operation) {
+            case '+':
+              result = num1 + num2;
+              break;
+            case '-':
+              result = num1 - num2;
+              break;
+            case '*':
+              result = num1 * num2;
+              break;
+            case '/':
+              result = num1 / num2;
+              break;
+            default:
+              result = 'Opération invalide';
+          }
+
+          $('#resultat').val(result);
+        } else {
+          $('#resultat').val('Veuillez entrer des nombres valides');
+        }
+      });
+
+        
+    </script>
+</body>
+</html>
